@@ -3,8 +3,11 @@ Console.Clear();
 int [] array = new int [20];  // Создадим массив размером 8 элементов.
 FillArray(array);             // Используем метод заполнения массива.
 PrintArray(array);            // Метод вывода на печать.
-// TurnArray(array);             // Метод разворота массива.
+TurnArray(array);             // Метод разворота массива.
 Console.WriteLine();          // Запись с новой строчки.
+PrintArray(array);            // Метод вывода на печать.
+Console.WriteLine();          // Запись с новой строчки.
+Console.WriteLine();          // Пустая строка. 
 SortArray(array);             // Сортировка элементов массива. 
 PrintArray(array);            // Метод вывода на печать.
 
@@ -14,7 +17,7 @@ void FillArray(int [] col)    // Заполним массив с помощью
 {
     for(int i = 0; i < col.Length; i++)     // Зададим условия цикла.
     {
-        col[i] = new Random().Next(0, 51); // Заполним цифрами от 0 до 50.
+        col[i] = new Random().Next(0, 51); // Заполним цифрами от 0 до 5.
     }
 }
 
@@ -38,18 +41,17 @@ void PrintArray(int [] col)   // Выведем массив на печать.
 }
 
 // РАЗВОРОТ МАССИВА
-/*void TurnArray(int [] col)
+void TurnArray(int [] col)
 {
-    for(int i = 0; i < col.Length/2; i++)
+    int i = 0;
+    while(i < col.Length/2)
     {
-        for(int j = col.Length-1; j > i; j--)
-        {
-            int temp = col[i];
-            col[i] = col[j];
-            col[j] = temp;
-        }
+        int temp = col[i];
+        col[i] = col[col.Length-1-i];
+        col[col.Length-1-i] = temp;
+        i++;
     }
-}*/
+}
 
 // СОРТИРОВКА МАССИВА ПО УБЫВАНИЮ
 
@@ -62,8 +64,8 @@ void SortArray(int [] col)
         {
             if(col[j] > col[maxPosition]) maxPosition = j;
         }
-        int temp = col [i];
-        col[i] = col [maxPosition];
+        int temp = col[i];
+        col[i] = col[maxPosition];
         col[maxPosition] = temp;
     }
 }

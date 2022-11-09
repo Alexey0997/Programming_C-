@@ -43,13 +43,11 @@ void PrintArray(int [] col)   // Выведем массив на печать.
 // РАЗВОРОТ МАССИВА
 void TurnArray(int [] col)
 {
-    int i = 0;
-    while(i < col.Length/2)
+    for(int i = 0; i < col.Length/2; i++)
     {
         int temp = col[i];
         col[i] = col[col.Length-1-i];
         col[col.Length-1-i] = temp;
-        i++;
     }
 }
 

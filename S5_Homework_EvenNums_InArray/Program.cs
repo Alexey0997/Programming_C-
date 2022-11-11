@@ -11,7 +11,7 @@ foreach (int el in array)              // Используем оператор 
 Console.WriteLine();                   // Печать результата с новой строки.
 Console.WriteLine($"Количество четных чисел в массиве = {evenNum}.");
 
-int[] GetArray(int size, int minValue, int maxValue) // Описание метода формирования массива. 
+int[] GetArray(int size, int minValue, int maxValue) // Метод формирования массива. 
 {
     int[] res = new int[size];
     for (int i = 0; i < size; i++)
